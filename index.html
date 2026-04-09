@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenClaw - Bộ slide 25 trang</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #131a2e;
+      --text: #eef2ff;
+      --muted: #aab4d6;
+      --accent: #7c9cff;
+      --line: #24304f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, #0a0f1d, #11192f);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+    h1 { font-size: 40px; margin: 0 0 8px; }
+    h2 { font-size: 28px; color: var(--accent); margin-top: 0; }
+    h3 { font-size: 20px; margin: 24px 0 8px; }
+    p, li { font-size: 18px; }
+    .lead { color: var(--muted); margin-bottom: 24px; }
+    .slide {
+      background: rgba(19, 26, 46, 0.95);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+      margin: 22px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+    }
+    .notes {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    pre {
+      white-space: pre-wrap;
+      background: #0b1326;
+      border: 1px solid #22304f;
+      border-radius: 12px;
+      padding: 14px;
+      overflow: auto;
+      color: #dce7ff;
+    }
+    .top {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(8px);
+      background: rgba(10, 15, 29, 0.7);
+      border-bottom: 1px solid var(--line);
+      z-index: 10;
+    }
+    .topin {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="top"><div class="topin">OpenClaw, bộ slide 25 trang để thuyết trình</div></div>
+  <div class="wrap">
+    <h1>OpenClaw</h1>
+    <p class="lead">Bản HTML đọc nhanh của bộ slide 25 trang, có kèm speaker notes.</p>
+
+    <section class="slide">
+      <h2>Slide 2. OpenClaw là gì?</h2>
+      <ul>
+        <li>Nền tảng AI agent có thể trò chuyện, hành động, và tự động hóa</li>
+        <li>Hỗ trợ nhiều kênh: Telegram, WhatsApp, Discord, Signal...</li>
+        <li>Có thể dùng tools để đọc file, sửa file, chạy lệnh, tìm web</li>
+        <li>Hỗ trợ automation, multi-agent, skills, plugins, ACP</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 3. OpenClaw dùng để làm gì?</h2>
+      <ul>
+        <li>Trợ lý cá nhân</li>
+        <li>Coding assistant</li>
+        <li>Bot vận hành nội bộ</li>
+        <li>Agent đa kênh cho nhóm</li>
+        <li>Hệ thống automation theo lịch hoặc theo sự kiện</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 4. Kiến trúc tổng quan</h2>
+      <ul>
+        <li>Gateway: trung tâm điều phối</li>
+        <li>Agent: AI xử lý hội thoại và hành động</li>
+        <li>Workspace: file, memory, skill, ghi chú</li>
+        <li>Channels: nơi nhận và gửi tin nhắn</li>
+        <li>Tools: năng lực thao tác hệ thống</li>
+        <li>Plugins/Skills: lớp mở rộng và chuyên biệt hóa</li>
+      </ul>
+    </section>
+    <section class="slide">
+      <h2>Slide 5. Hành trình sử dụng cơ bản</h2>
+      <ol>
+        <li>Cài OpenClaw</li>
+        <li>Chạy onboarding</li>
+        <li>Cấu hình model</li>
+        <li>Mở dashboard</li>
+        <li>Kết nối một channel, thường là Telegram</li>
+        <li>Chat thử và xác nhận agent hoạt động</li>
+      </ol>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 6. Cài đặt nhanh</h2>
+      <pre><code>curl -fsSL https://openclaw.ai/install.sh | bash
+openclaw onboard --install-daemon</code></pre>
+      <p>Kiểm tra:</p>
+      <pre><code>openclaw gateway status
+openclaw dashboard</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 7. Onboarding làm gì?</h2>
+      <ul>
+        <li>Chọn model provider</li>
+        <li>Cấu hình API key hoặc auth</li>
+        <li>Thiết lập gateway</li>
+        <li>Thiết lập daemon/service</li>
+        <li>Chuẩn bị workspace ban đầu</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 8. File cấu hình quan trọng nhất</h2>
+      <pre><code>~/.openclaw/openclaw.json</code></pre>
+      <ul>
+        <li>agents</li>
+        <li>channels</li>
+        <li>gateway</li>
+        <li>tools</li>
+        <li>skills</li>
+        <li>cron / hooks / automation</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 9. Ví dụ config tối thiểu</h2>
+      <pre><code>{
+  agents: { defaults: { workspace: "~/.openclaw/workspace" } },
+  channels: {
+    telegram: {
+      enabled: true,
+      botToken: "123:abc",
+      dmPolicy: "pairing"
+    }
+  }
+}</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 10. Gateway, trái tim của hệ thống</h2>
+      <pre><code>openclaw gateway status
+openclaw gateway start
+openclaw gateway stop
+openclaw gateway restart
+openclaw health
+openclaw status</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 11. Agent, session, workspace</h2>
+      <ul>
+        <li>Agent: một AI persona / runtime cụ thể</li>
+        <li>Session: giữ ngữ cảnh hội thoại</li>
+        <li>Workspace: nơi agent đọc, ghi, nhớ, và làm việc</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 12. Memory và file ngữ cảnh</h2>
+      <ul>
+        <li>SOUL.md</li>
+        <li>USER.md</li>
+        <li>MEMORY.md</li>
+        <li>memory/YYYY-MM-DD.md</li>
+        <li>AGENTS.md</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 13. Tools, sức mạnh thật sự của agent</h2>
+      <ul>
+        <li>File: read, write, edit</li>
+        <li>Runtime: exec, process</li>
+        <li>Web: web_search, web_fetch</li>
+        <li>Automation: cron</li>
+        <li>Session: sessions_*, subagents</li>
+        <li>Media: image, tts, video_generate</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 14. Skills và plugins</h2>
+      <ul>
+        <li>Skills: dạy agent khi nào dùng tool và dùng ra sao</li>
+        <li>Plugins: thêm channel, provider, tool, media, runtime mới</li>
+      </ul>
+      <pre><code>openclaw skills list
+openclaw plugins list</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 15. Kết nối channel, ví dụ Telegram</h2>
+      <pre><code>{
+  channels: {
+    telegram: {
+      enabled: true,
+      botToken: "123:abc",
+      dmPolicy: "pairing",
+      groups: { "*": { requireMention: true } }
+    }
+  }
+}</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 16. Bảo mật truy cập</h2>
+      <ul>
+        <li>pairing</li>
+        <li>allowlist</li>
+        <li>open</li>
+        <li>disabled</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 17. Dashboard và CLI</h2>
+      <pre><code>openclaw dashboard
+openclaw status
+openclaw logs --follow</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 18. Heartbeat, nhịp kiểm tra định kỳ</h2>
+      <pre><code>{
+  agents: {
+    defaults: {
+      heartbeat: { every: "30m", target: "last" }
+    }
+  }
+}</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 19. Cron, tự động hóa đúng giờ</h2>
+      <pre><code>openclaw cron add \
+  --name "Morning brief" \
+  --cron "0 7 * * *" \
+  --session isolated \
+  --message "Summarize overnight updates." \
+  --announce</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 20. Cron vs Heartbeat</h2>
+      <ul>
+        <li>Cần đúng giờ → cron</li>
+        <li>Cần kiểm tra định kỳ có ngữ cảnh → heartbeat</li>
+</ul>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 21. Multi-agent, khi một agent không còn đủ</h2>
+      <ul>
+        <li>main: trợ lý chung</li>
+        <li>coder: xử lý code</li>
+        <li>ops: monitoring và automation</li>
+        <li>support: trả lời khách hàng</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 22. ACP cho coding runtime nâng cao</h2>
+      <pre><code>/acp spawn codex --bind here
+/acp spawn codex --mode persistent --thread auto</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 23. Bảo mật và sandbox</h2>
+      <pre><code>openclaw security audit
+openclaw doctor</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 24. Troubleshooting nhanh</h2>
+      <pre><code>openclaw status
+openclaw gateway status
+openclaw health
+openclaw channels status --probe
+openclaw logs --follow
+openclaw doctor</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>Slide 25. Kết luận và demo flow</h2>
+      <ul>
+        <li>đa kênh</li>
+        <li>tool-enabled agent</li>
+        <li>automation</li>
+        <li>extensibility</li>
+        <li>runtime nâng cao với ACP và multi-agent</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
